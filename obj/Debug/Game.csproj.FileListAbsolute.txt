@@ -1,0 +1,17 @@
+D:\project hoc\Win Programing\MIDTERM\new\Game\bin\Debug\Game.exe.config
+D:\project hoc\Win Programing\MIDTERM\new\Game\bin\Debug\Game.exe
+D:\project hoc\Win Programing\MIDTERM\new\Game\bin\Debug\Game.pdb
+D:\project hoc\Win Programing\MIDTERM\new\Game\obj\Debug\Game.csproj.AssemblyReference.cache
+D:\project hoc\Win Programing\MIDTERM\new\Game\obj\Debug\Game.csproj.SuggestedBindingRedirects.cache
+D:\project hoc\Win Programing\MIDTERM\new\Game\obj\Debug\Game.GAMES.GAME1.resources
+D:\project hoc\Win Programing\MIDTERM\new\Game\obj\Debug\Game.LOSESCREEN.LOSE.resources
+D:\project hoc\Win Programing\MIDTERM\new\Game\obj\Debug\Game.Main.resources
+D:\project hoc\Win Programing\MIDTERM\new\Game\obj\Debug\Game.Properties.Resources.resources
+D:\project hoc\Win Programing\MIDTERM\new\Game\obj\Debug\Game.csproj.GenerateResource.cache
+D:\project hoc\Win Programing\MIDTERM\new\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+D:\project hoc\Win Programing\MIDTERM\new\Game\obj\Debug\Game.exe
+D:\project hoc\Win Programing\MIDTERM\new\Game\obj\Debug\Game.pdb
+D:\project hoc\Win Programing\MIDTERM\new\Game\obj\Debug\Game.GAMES.GAME2.resources
+D:\project hoc\Win Programing\MIDTERM\new\Game\obj\Debug\Game.LOSESCREEN.LOSEGAME2.resources
+D:\project hoc\Win Programing\MIDTERM\new\Game\obj\Debug\Game.SETTINGS.SETTING2.resources
+D:\project hoc\Win Programing\MIDTERM\new\Game\obj\Debug\Game.SETTINGS.SETTING1.resources
