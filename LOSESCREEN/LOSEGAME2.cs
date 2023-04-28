@@ -28,9 +28,13 @@ namespace Game.LOSESCREEN
         //FONT
         PrivateFontCollection FONTS = new PrivateFontCollection();
         List<String> ADDRFONTS = new List<string>();
-        public LOSEGAME2(int ED,int health, int dmg)
+
+        private Form MAIN;
+        bool AGAIN = false;
+        public LOSEGAME2(int ED,int health, int dmg, Form Main)
         {
             InitializeComponent();
+            MAIN = Main;
             ENDING = ED;
             HEALTH = health;
             DMG = dmg;
@@ -38,6 +42,8 @@ namespace Game.LOSESCREEN
         }
         private void Setup()
         {
+            this.AGAINBUTT.Hide();
+            this.MENUBUTT.Hide();
             if (ENDING == 1)
                 BGLIST = Directory.GetFiles("BG\\BG LOSE\\BGLOSEply2", "*.png").ToList();
             else if(ENDING == 2)
@@ -87,16 +93,24 @@ namespace Game.LOSESCREEN
         private void AGAINCLICK(object sener,EventArgs e)
         {
             this.Hide();
-            GAME2 ps = new GAME2(HEALTH, DMG);
+            AGAIN = true;
+            GAME2 ps = new GAME2(HEALTH, DMG, MAIN);
             ps.ShowDialog();
             this.Dispose();
         }
         private void MENUCLICK(object sender,EventArgs e)
         {
             this.Hide();
-            Main ps = new Main();
-            ps.ShowDialog();
+            AGAIN = true;
+            this.MAIN.Show();
+            this.MAIN.Enabled = true;
             this.Dispose();
+        }
+
+        private void LOSEGAME2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (AGAIN == false)
+                this.MAIN.Dispose();
         }
     }
 }

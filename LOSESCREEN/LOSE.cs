@@ -23,14 +23,19 @@ namespace Game.LOSESCREEN
         List<String> ADDRFONTS = new List<string>();
         int dif;
 
-        public LOSE(int dif)
+        private Form MAIN;
+        bool AGAIN = false;
+        public LOSE(int dif, Form Main)
         {
             InitializeComponent();
             setup();
             this.dif = dif;
+            this.MAIN = Main;
         }
         private void setup()
         {
+            this.button1.Hide();
+            this.button2.Hide();
             this.BackgroundImageLayout = ImageLayout.Stretch;
             BG = Directory.GetFiles("BG\\BG LOSE\\VADERDEATH", "*.png").ToList();
             ADDRFONTS = Directory.GetFiles("MISC", "*ttf").ToList();
@@ -46,15 +51,17 @@ namespace Game.LOSESCREEN
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            GAME1 sp = new GAME1(dif);
+            AGAIN = true;
+            GAME1 sp = new GAME1(dif, MAIN);
             sp.ShowDialog();
             this.Dispose();
         }
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Main ps = new Main();
-            ps.ShowDialog();
+            AGAIN = true;
+            this.MAIN.Show();
+            this.MAIN.Enabled = true;
             this.Dispose();
         }
         private void Timer(object sender, EventArgs e)
@@ -70,5 +77,10 @@ namespace Game.LOSESCREEN
             this.BackgroundImage = bg;
         }
 
+        private void LOSE_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (AGAIN == false)
+                this.MAIN.Dispose();
+        }
     }
 }

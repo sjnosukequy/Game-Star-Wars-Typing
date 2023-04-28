@@ -144,6 +144,7 @@
             this.Name = "SETTING2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SETTING";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SETTING2_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

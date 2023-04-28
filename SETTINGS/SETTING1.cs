@@ -19,7 +19,9 @@ namespace Game.SETTINGS
         int dif = 11;
         PrivateFontCollection FONTS = new PrivateFontCollection();
         List<String> ADDRFONTS = new List<string>();
-        public SETTING1()
+
+        private Form MAIN;
+        public SETTING1(Form Main)
         {
             InitializeComponent();
             ADDRFONTS = Directory.GetFiles("MISC", "*ttf").ToList();
@@ -29,6 +31,7 @@ namespace Game.SETTINGS
             this.BACK.Font = new Font(FONTS.Families[3], this.BACK.Font.Size + 10, this.BACK.Font.Style);
             this.DIFF.Font = new Font(FONTS.Families[1], this.DIFF.Font.Size + 10, this.DIFF.Font.Style);
             this.label1.Font = new Font(FONTS.Families[3], this.label1.Font.Size + 5, this.label1.Font.Style);
+            MAIN = Main;
         }
 
         private void DIFF_SelectedIndexChanged(object sender, EventArgs e)
@@ -46,7 +49,7 @@ namespace Game.SETTINGS
         {
             back = false;
             this.Hide();
-            GAME1 ps = new GAME1(dif);
+            GAME1 ps = new GAME1(dif,MAIN);
             ps.ShowDialog();
             this.Dispose();
         }

@@ -20,10 +20,12 @@ namespace Game.SETTINGS
         public bool back;
         PrivateFontCollection FONTS = new PrivateFontCollection();
         List<String> ADDRFONTS = new List<string>();
-        public SETTING2()
+        private Form MAIN;
+        public SETTING2(Form Main)
         {
             InitializeComponent();
             ADDRFONTS = Directory.GetFiles("MISC", "*ttf").ToList();
+            this.MAIN = Main;
             foreach (string i in ADDRFONTS)
                 FONTS.AddFontFile(i);
             this.START.Font = new Font(FONTS.Families[3], this.START.Font.Size + 10, this.START.Font.Style);
@@ -50,7 +52,7 @@ namespace Game.SETTINGS
         {
             back = false;
             this.Hide();
-            GAME2 ps = new GAME2(Health, dmg);
+            GAME2 ps = new GAME2(Health, dmg, MAIN);
             ps.ShowDialog();
             this.Dispose();
         }
@@ -61,5 +63,9 @@ namespace Game.SETTINGS
             this.Dispose();
         }
 
+        private void SETTING2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
     }
 }

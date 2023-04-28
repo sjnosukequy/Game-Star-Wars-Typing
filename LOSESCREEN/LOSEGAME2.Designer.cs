@@ -53,9 +53,8 @@
             this.AGAINBUTT.Size = new System.Drawing.Size(375, 94);
             this.AGAINBUTT.TabIndex = 0;
             this.AGAINBUTT.Text = "TRY AGAIN";
-            this.AGAINBUTT.Hide();
-            this.AGAINBUTT.Click += new System.EventHandler(this.AGAINCLICK);
             this.AGAINBUTT.UseVisualStyleBackColor = false;
+            this.AGAINBUTT.Click += new System.EventHandler(this.AGAINCLICK);
             // 
             // MENUBUTT
             // 
@@ -70,11 +69,10 @@
             this.MENUBUTT.Size = new System.Drawing.Size(375, 94);
             this.MENUBUTT.TabIndex = 1;
             this.MENUBUTT.Text = "MENU";
-            this.MENUBUTT.Hide();
-            this.MENUBUTT.Click += new System.EventHandler(this.MENUCLICK);
             this.MENUBUTT.UseVisualStyleBackColor = false;
+            this.MENUBUTT.Click += new System.EventHandler(this.MENUCLICK);
             // 
-            // LOSEGAME1
+            // LOSEGAME2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -85,9 +83,10 @@
             this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "LOSEGAME1";
+            this.Name = "LOSEGAME2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOSEGAME1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LOSEGAME2_FormClosed);
             this.ResumeLayout(false);
 
         }

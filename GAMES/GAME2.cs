@@ -79,11 +79,16 @@ namespace Game.GAMES
 
         //ENDING
         int ED;
-        public GAME2(int HEALTH, int dmg)
+
+        //MAIN
+        private Form MAIN;
+        private bool AGAIN = false;
+        public GAME2(int HEALTH, int dmg, Form Main)
         {
             InitializeComponent();
             MAXHEALTH = HEALTH;
             DMG = dmg;
+            MAIN = Main;
             this.panel1.DBUFFER();
             this.panel2.DBUFFER();
             SetUP();
@@ -154,7 +159,8 @@ namespace Game.GAMES
                 {
                     this.timer1.Stop();
                     this.Hide();
-                    LOSEGAME2 ps = new LOSEGAME2(ED,MAXHEALTH,DMG);
+                    AGAIN = true;
+                    LOSEGAME2 ps = new LOSEGAME2(ED,MAXHEALTH,DMG,MAIN);
                     ps.ShowDialog();
                     this.Dispose();
                 }
@@ -484,14 +490,21 @@ namespace Game.GAMES
         private void EXITBUTT_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Main ps = new Main();
-            ps.ShowDialog();
+            this.MAIN.Show();
+            this.MAIN.Enabled = true;
+            AGAIN = true;
             this.Dispose();
         }
 
         private void CONTBUTT_Click(object sender, EventArgs e)
         {
             CONT = true;
+        }
+
+        private void GAME2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (AGAIN == false)
+                MAIN.Dispose();
         }
     }
 }

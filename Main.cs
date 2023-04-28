@@ -39,36 +39,20 @@ namespace Game
         {
             this.timer1.Stop();
             this.Enabled = false;
-            SETTING1 ps = new SETTING1();
+            SETTING1 ps = new SETTING1(this);
             ps.ShowDialog();
-            if (ps.back)
-            {
-                this.Enabled = true;
-                this.timer1.Start();
-            }
-            else
-            {
-                this.Enabled = true;
-                this.Dispose();
-            }
+            this.Enabled = true;
+            this.timer1.Start();
         }
 
         private void TWOPLY_Click(object sender, EventArgs e)
         {
             this.timer1.Stop();
             this.Enabled = false;
-            SETTING2 ps = new SETTING2();
+            SETTING2 ps = new SETTING2(this);
             ps.ShowDialog();
-            if (ps.back)
-            {
-                this.Enabled = true;
-                this.timer1.Start();
-            }
-            else
-            {
-                this.Enabled = true;
-                this.Dispose();
-            }
+            this.Enabled = true;
+            this.timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

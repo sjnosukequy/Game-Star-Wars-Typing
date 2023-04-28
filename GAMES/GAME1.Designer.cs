@@ -137,6 +137,7 @@ namespace Game.GAMES
             this.Name = "GAME1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GAME1_FormClosed);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.REFRESH);
             this.ResumeLayout(false);
             this.PerformLayout();

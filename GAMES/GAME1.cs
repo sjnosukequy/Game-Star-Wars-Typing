@@ -86,11 +86,16 @@ namespace Game.GAMES
 
         //DIFFICULTY
         int dif;
-        public GAME1(int dif)
+
+        //MAIN FROM
+        private Form MAIN;
+        bool AGAIN = false;
+        public GAME1(int dif, Form Main)
         {
             InitializeComponent();
             setup();
             this.dif = dif;
+            this.MAIN = Main;
         }
         private void setup()
         {
@@ -199,9 +204,10 @@ namespace Game.GAMES
                 {
                     this.timer1.Stop();
                     this.Hide();
-                    LOSE SP = new LOSE(dif);
+                    AGAIN = true;
+                    LOSE SP = new LOSE(dif, MAIN);
                     SP.ShowDialog();
-                    this.Close();
+                    this.Dispose();
                 }
             }
         }
@@ -753,9 +759,16 @@ namespace Game.GAMES
         private void EXITBUTT_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Main ps = new Main();
-            ps.ShowDialog();
+            this.MAIN.Show();
+            this.MAIN.Enabled = true;
+            AGAIN = true;
             this.Dispose();
+        }
+
+        private void GAME1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (AGAIN == false)
+                MAIN.Dispose();
         }
 
         //public void RESET()

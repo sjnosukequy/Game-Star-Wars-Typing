@@ -179,6 +179,7 @@ namespace Game.GAMES
             this.Name = "GAME2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GAME2_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.LOADINGBOX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HEALTHBAR1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HEALTHBAR2)).EndInit();
